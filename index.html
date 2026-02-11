@@ -28,15 +28,17 @@
       margin-bottom: 20px;
     }
 
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #2563eb;
-    }
+   .profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 3px solid #2563eb;
+  image-rendering: crisp-edges;
+}
 
-    h1 {
+      h1 {
       color: #2563eb;
       margin-bottom: 5px;
     }
@@ -79,9 +81,13 @@
 <div class="container">
 
   <div class="header">
-    <img src="myprofile.png" alt="Yash Shirture" class="profile-pic">
-
-    <div>
+    <img 
+  src="profile.jpg" 
+  alt="Yash Shirture" 
+  class="profile-pic"
+  loading="eager"
+>
+      <div>
       <h1>Yash Shirture</h1>
       <p class="tagline">
         Sales Operations & Data Specialist | Dashboards • Data Cleaning • KPI Reporting
