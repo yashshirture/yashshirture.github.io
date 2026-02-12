@@ -8,12 +8,24 @@
 html { scroll-behavior: smooth; }
 
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0b1120;
-    color: #e5e7eb;
-    line-height: 1.6;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0b1118, #0f1c26);
+  color: #e6edf3;
 }
+
+h1 {
+  color: #ffffff;
+}
+
+h2 {
+  color: #00e0a4;
+}
+
+a {
+  color: #00e0a4;
+}
+
 
 nav {
     position: fixed;
@@ -135,6 +147,37 @@ a {
     font-size: 14px;
     color: #64748b;
 }
+    .capability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.capability-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(0, 224, 164, 0.15);
+  padding: 25px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.capability-card:hover {
+  transform: translateY(-6px);
+  border-color: #00e0a4;
+  box-shadow: 0 0 20px rgba(0, 224, 164, 0.15);
+}
+
+.capability-card h3 {
+  color: #00e0a4;
+  margin-bottom: 15px;
+}
+
+.capability-card ul {
+  padding-left: 18px;
+  line-height: 1.7;
+}
+
 </style>
 </head>
 
@@ -228,31 +271,52 @@ a {
 <!-- SKILLS -->
 <section id="skills">
 <h2>Core Capabilities</h2>
+<h2>Core Capabilities</h2>
 
-<div class="skill">
-<p>Advanced Excel & Dashboard Engineering</p>
-<div class="skill-bar"><div class="skill-level" data-level="95%"></div></div>
+<div class="capability-grid">
+
+  <div class="capability-card">
+    <h3>Reporting & Dashboard Architecture</h3>
+    <ul>
+      <li>KPI framework design & metric structuring</li>
+      <li>Executive summary dashboards</li>
+      <li>Dynamic Excel reporting systems</li>
+      <li>Data modeling for performance visibility</li>
+    </ul>
+  </div>
+
+  <div class="capability-card">
+    <h3>Operational Data Structuring</h3>
+    <ul>
+      <li>Raw data normalization & validation logic</li>
+      <li>Error-proof reporting layers</li>
+      <li>Automation-ready spreadsheet design</li>
+      <li>Audit-friendly documentation</li>
+    </ul>
+  </div>
+
+  <div class="capability-card">
+    <h3>Business Performance Analytics</h3>
+    <ul>
+      <li>Revenue & sales performance analysis</li>
+      <li>Inventory & risk monitoring systems</li>
+      <li>Trend & variance diagnostics</li>
+      <li>Operational decision support reporting</li>
+    </ul>
+  </div>
+
+  <div class="capability-card">
+    <h3>Technical Stack</h3>
+    <ul>
+      <li>Advanced Excel (Pivot, XLOOKUP, Power Query)</li>
+      <li>SQL (SELECT, JOIN, GROUP BY, Aggregation)</li>
+      <li>Power BI (Foundational modeling & visuals)</li>
+      <li>Structured reporting workflows</li>
+    </ul>
+  </div>
 </div>
 
-<div class="skill">
-<p>KPI Modeling & Performance Reporting</p>
-<div class="skill-bar"><div class="skill-level" data-level="90%"></div></div>
-</div>
 
-<div class="skill">
-<p>Data Structuring & Validation Systems</p>
-<div class="skill-bar"><div class="skill-level" data-level="92%"></div></div>
-</div>
-
-<div class="skill">
-<p>SQL Querying & Aggregation Logic</p>
-<div class="skill-bar"><div class="skill-level" data-level="75%"></div></div>
-</div>
-
-<div class="skill">
-<p>Power BI Reporting (Foundational)</p>
-<div class="skill-bar"><div class="skill-level" data-level="70%"></div></div>
-</div>
 </section>
 
 <!-- CERTIFICATIONS -->
