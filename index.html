@@ -189,6 +189,42 @@ footer {
   padding: 40px;
   color: #64748b;
 }
+  .hero-role {
+  font-size: 22px;
+  color: #38bdf8;
+  margin-top: 10px;
+}
+
+.hero-desc {
+  max-width: 650px;
+  margin: 20px auto;
+  color: #94a3b8;
+  font-size: 18px;
+}
+
+.competency-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.competency {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.competency:hover {
+  box-shadow: 0 0 25px rgba(56,189,248,0.4);
+  transform: translateY(-5px);
+}
+
+.competency h3 {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
 </style>
 </head>
 
@@ -204,58 +240,108 @@ footer {
 <div class="hero">
   <div>
     <img src="myownprofile.png" alt="Yash Shirture">
+
     <h1>Yash Shirture</h1>
-    <p>Sales Operations & Data Specialist | Excel • SQL • Power BI</p>
-    <a href="#projects" class="hero-btn">View My Work</a>
+
+    <p class="hero-role">
+      Real-Time Business Operations & Data Specialist
+    </p>
+
+    <p class="hero-desc">
+      I optimize operational performance by transforming live business data 
+      into structured reporting systems that improve visibility, control, and decision speed.
+    </p>
   </div>
 </div>
+
 
 <section id="projects">
 <h2>Portfolio Projects</h2>
 
 <div class="project">
-<h3>Pizza Sales Reporting System</h3>
-<img src="pizza_dashboard.png">
-<p>Interactive Excel dashboard analyzing revenue trends and performance metrics.</p>
+<h3>Case Study: Pizza Sales Performance Reporting System</h3>
+
+<p><strong>Business Context:</strong> Sales data was scattered across raw spreadsheets with no consolidated KPI visibility.</p>
+
+<p><strong>Problem:</strong> Management lacked structured insight into peak hours, top-selling items, and revenue trends.</p>
+
+<p><strong>Approach:</strong> Engineered a structured Excel dashboard using Pivot Tables, dynamic slicers, XLOOKUP logic, and KPI indicators to centralize performance tracking.</p>
+
+<p><strong>Impact:</strong> Enabled faster revenue analysis, identification of high-performing products, and clearer operational planning decisions.</p>
+
+<a href="https://github.com/yashshirture/Pizza-Sales-Reporting-System" target="_blank">
+View Technical Breakdown
+</a>
 </div>
 
-<div class="project">
-<h3>Inventory Risk Control System</h3>
-<img src="inventory_dashboard.png">
-<p>Structured inventory monitoring system to reduce stock shortages and overstock risks.</p>
-</div>
 
 <div class="project">
-<h3>Road Accident Risk Monitoring</h3>
-<img src="road_accident_dashboard.png">
-<p>Risk analytics dashboard identifying accident patterns and high-risk zones.</p>
+<h3>Case Study: Inventory Risk Control & Monitoring Framework</h3>
+
+<p><strong>Business Context:</strong> Stock level tracking lacked structured visibility, increasing risk of shortages and overstocking.</p>
+
+<p><strong>Problem:</strong> No early-warning system to detect inventory imbalances across product categories.</p>
+
+<p><strong>Approach:</strong> Designed a structured Excel-based monitoring system using conditional formatting, validation rules, Pivot analysis, and threshold-based alerts.</p>
+
+<p><strong>Impact:</strong> Improved inventory control clarity and reduced decision delay in stock management planning.</p>
+
+<a href="https://github.com/yashshirture/Inventory-Risk-Control-System" target="_blank">
+View Technical Breakdown
+</a>
 </div>
+
+
+<div class="project">
+<h3>Case Study: Road Accident Risk Analytics Dashboard</h3>
+
+<p><strong>Business Context:</strong> Accident data lacked structured visualization for identifying high-risk zones and patterns.</p>
+
+<p><strong>Problem:</strong> Decision-makers could not easily detect accident hotspots or long-term risk trends.</p>
+
+<p><strong>Approach:</strong> Structured raw dataset, implemented Pivot-based aggregation, built trend charts and heat-style visuals to surface risk concentration areas.</p>
+
+<p><strong>Impact:</strong> Enabled clearer identification of accident clusters and improved prioritization for safety intervention planning.</p>
+
+<a href="https://github.com/yashshirture/Road-Accident-Risk-Monitoring-System" target="_blank">
+View Technical Breakdown
+</a>
+</div>
+
 
 </section>
 
 <section id="skills">
-<h2>Skills</h2>
+<h2>Core Competencies</h2>
 
-<div class="skill">
-<div class="skill-name">Advanced Excel & Dashboard Engineering</div>
-<div class="skill-bar"><div class="skill-level" data-level="95%"></div></div>
+<div class="competency-grid">
+
+  <div class="competency">
+    <h3>Real-Time Performance Monitoring</h3>
+    <p>Tracking live KPIs, identifying deviations, and supporting operational adjustments.</p>
+  </div>
+
+  <div class="competency">
+    <h3>Sales & Operations Reporting</h3>
+    <p>Designing structured dashboards to monitor revenue, productivity, and efficiency metrics.</p>
+  </div>
+
+  <div class="competency">
+    <h3>Excel-Based Data Engineering</h3>
+    <p>Data cleaning, validation logic, structured datasets, and repeatable reporting frameworks.</p>
+  </div>
+
+  <div class="competency">
+    <h3>SQL & Data Querying</h3>
+    <p>Extracting and aggregating structured datasets for operational analysis.</p>
+  </div>
+
+  <div class="competency">
+    <h3>Power BI Visualization</h3>
+    <p>Building interactive reports to enhance management-level insight delivery.</p>
+  </div>
+
 </div>
-
-<div class="skill">
-<div class="skill-name">KPI & Sales Operations Reporting</div>
-<div class="skill-bar"><div class="skill-level" data-level="90%"></div></div>
-</div>
-
-<div class="skill">
-<div class="skill-name">SQL</div>
-<div class="skill-bar"><div class="skill-level" data-level="75%"></div></div>
-</div>
-
-<div class="skill">
-<div class="skill-name">Power BI</div>
-<div class="skill-bar"><div class="skill-level" data-level="70%"></div></div>
-</div>
-
 </section>
 
 <section id="certifications">
