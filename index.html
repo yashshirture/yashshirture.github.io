@@ -320,6 +320,96 @@ footer {
   color: #64748b;
   font-size: 14px;
 }
+
+  /* ================= CASE STUDIES ================= */
+
+.cases-section {
+  padding: 100px 10%;
+}
+
+.section-title {
+  font-size: 34px;
+  margin-bottom: 60px;
+  color: #00ffd0;
+}
+
+.case-card {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 50px;
+  margin-bottom: 80px;
+  padding: 40px;
+  background: rgba(10, 20, 35, 0.6);
+  border: 1px solid rgba(0,255,200,0.1);
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  transition: 0.4s ease;
+}
+
+.case-card:hover {
+  border-color: rgba(0,255,200,0.4);
+  box-shadow: 0 0 40px rgba(0,255,200,0.08);
+}
+
+.case-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.case-content h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.case-context {
+  color: #94a3b8;
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+.case-block {
+  margin-bottom: 20px;
+}
+
+.case-block h4 {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 8px;
+}
+
+.case-block ul {
+  padding-left: 18px;
+  color: #cbd5e1;
+}
+
+.case-block p {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.case-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #00ffd0;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.case-link:hover {
+  color: #38bdf8;
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .case-card {
+    grid-template-columns: 1fr;
+  }
+}
+
  
 
 
