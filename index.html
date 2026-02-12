@@ -575,6 +575,16 @@ window.addEventListener("scroll", () => {
 });
 
 </script>
+  <script>
+function toggleCase(element) {
+  const module = element.parentElement;
+  module.classList.toggle("active");
+
+  const icon = element.querySelector(".expand-icon");
+  icon.textContent = module.classList.contains("active") ? "−" : "+";
+}
+</script>
+
 
 </body>
 </html>
