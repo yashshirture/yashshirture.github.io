@@ -27,55 +27,30 @@ body {
 }
 
 /* ---------------- SUBTLE ENTERPRISE BACKGROUND ---------------- */
-
 body {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background: #0b1220;
-  color: #e6edf3;
+  color: #e5e7eb;
   overflow-x: hidden;
-  position: relative;
 }
 
-/* Animated flowing gradient background */
+/* Animated grid background */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: linear-gradient(
-    130deg,
-    #0b1220,
-    #0f1f3d,
-    #102e4a,
-    #0b1220
-  );
-  background-size: 400% 400%;
-  animation: gradientMove 20s ease infinite;
-  z-index: -3;
-}
-
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-  /* Subtle moving data grid */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    linear-gradient(rgba(0,255,200,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,200,0.04) 1px, transparent 1px);
+  background-image: 
+    linear-gradient(rgba(0,255,200,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,200,0.08) 1px, transparent 1px);
   background-size: 60px 60px;
-  animation: gridFlow 25s linear infinite;
-  z-index: -2;
+  animation: gridMove 20s linear infinite;
+  z-index: -1;
 }
 
-@keyframes gridFlow {
-  from { transform: translateY(0); }
-  to { transform: translateY(60px); }
+@keyframes gridMove {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 60px 60px, 60px 60px; }
 }
 
 
@@ -570,7 +545,7 @@ footer {
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+ <section id="contact">
   <h3>Contact</h3>
   <p>Email: <a href="mailto:yashatwork623@gmail.com">yashatwork623@gmail.com</a></p>
   <p>LinkedIn: <a href="https://linkedin.com/in/yash-shirture" target="_blank">linkedin.com/in/yash-shirture</a></p>
@@ -587,6 +562,51 @@ document.querySelectorAll(".case-header").forEach(header => {
     content.style.display = content.style.display === "block" ? "none" : "block";
   });
 });
+
+  .contact a {
+  color: #00e5c4;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.contact a:hover {
+  color: #38bdf8;
+  text-shadow: 0 0 8px rgba(0,255,200,0.6);
+}
+  <h2>Contact</h2>
+
+<div class="contact">
+  <p>
+    Email: <a href="mailto:yashatwork623@gmail.com">yashatwork623@gmail.com</a><br>
+    LinkedIn:
+    <a href="https://www.linkedin.com/in/yash-shirture-635153202/" target="_blank">
+      linkedin.com/in/yash-shirture
+    </a>
+  </p>
+
+  <a href="Yash_Shirture_Resume.pdf" download class="resume-btn">
+    Download Resume
+  </a>
+      .resume-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 26px;
+  background: linear-gradient(90deg, #00e5c4, #38bdf8);
+  color: #0b1220;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.resume-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,255,200,0.3);
+}
+
+</div>
+
 </script>
 
 <div class="particles"></div>
