@@ -323,91 +323,86 @@ footer {
 
   /* ================= CASE STUDIES ================= */
 
-.cases-section {
+/* ================= PROJECTS ================= */
+
+.projects-section {
   padding: 100px 10%;
 }
 
-.section-title {
-  font-size: 34px;
-  margin-bottom: 60px;
-  color: #00ffd0;
-}
-
-.case-card {
-  display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 50px;
-  margin-bottom: 80px;
+.project-card {
+  background: #0f1b2d;
+  border: 1px solid rgba(0,255,200,0.15);
+  border-radius: 18px;
   padding: 40px;
-  background: rgba(10, 20, 35, 0.6);
-  border: 1px solid rgba(0,255,200,0.1);
-  border-radius: 14px;
-  backdrop-filter: blur(12px);
+  box-shadow:
+    0 0 40px rgba(0,255,200,0.08);
   transition: 0.4s ease;
 }
 
-.case-card:hover {
-  border-color: rgba(0,255,200,0.4);
-  box-shadow: 0 0 40px rgba(0,255,200,0.08);
+.project-card:hover {
+  box-shadow:
+    0 0 60px rgba(0,255,200,0.18);
 }
 
-.case-image img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.case-content h3 {
-  font-size: 24px;
-  margin-bottom: 15px;
-}
-
-.case-context {
-  color: #94a3b8;
-  margin-bottom: 25px;
-  line-height: 1.7;
-}
-
-.case-block {
-  margin-bottom: 20px;
-}
-
-.case-block h4 {
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #38bdf8;
-  margin-bottom: 8px;
-}
-
-.case-block ul {
-  padding-left: 18px;
-  color: #cbd5e1;
-}
-
-.case-block p {
-  color: #cbd5e1;
-  line-height: 1.6;
-}
-
-.case-link {
-  display: inline-block;
-  margin-top: 10px;
-  color: #00ffd0;
-  text-decoration: none;
+.project-title {
+  font-size: 22px;
+  margin-bottom: 30px;
+  color: #00f0d0;
   font-weight: 600;
+}
+
+.project-image-wrapper {
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 950px;
+  display: block;
+  margin: auto;
+  border-radius: 12px;
+  transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.02);
+}
+
+.project-description {
+  font-size: 15px;
+  color: #a8b3c7;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.project-points {
+  margin-bottom: 25px;
+  padding-left: 18px;
+  color: #cdd6e4;
+}
+
+.project-points li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.project-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1px solid #00f0d0;
+  border-radius: 8px;
+  color: #00f0d0;
+  text-decoration: none;
+  font-weight: 500;
   transition: 0.3s ease;
 }
 
-.case-link:hover {
-  color: #38bdf8;
-}
-
-/* Responsive */
-
-@media (max-width: 1000px) {
-  .case-card {
-    grid-template-columns: 1fr;
-  }
+.project-btn:hover {
+  background: #00f0d0;
+  color: #06101f;
 }
 
  
