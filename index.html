@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Real-Time Business Operations & Data Specialist focused on KPI architecture, structured reporting systems, and executive dashboard design.">
-<title>Yash Shirture | Real-Time Operations & Business Data Specialist</title>
+<title>Yash Shirture | Real-Time Operations & Data Specialist</title>
 
 <style>
 
-/* ================= GLOBAL ================= */
+/* ================= BASE ================= */
 
 * {
   margin: 0;
@@ -21,22 +19,22 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: "Segoe UI", sans-serif;
-  background: #0b1220;
+  background: #060b14;
   color: #e6edf3;
   overflow-x: hidden;
 }
 
-/* ================= ENTERPRISE GRID BACKGROUND ================= */
+/* ================= ANIMATED GRID ================= */
 
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0,255,200,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,200,0.06) 1px, transparent 1px);
+    linear-gradient(rgba(0,240,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,240,255,0.05) 1px, transparent 1px);
   background-size: 60px 60px;
-  animation: gridMove 25s linear infinite;
+  animation: gridMove 40s linear infinite;
   z-index: -2;
 }
 
@@ -45,61 +43,108 @@ body::before {
   to { background-position: 60px 60px, 60px 60px; }
 }
 
-/* ================= PARTICLES ================= */
+/* ================= NAV ================= */
 
-.particles {
+nav {
   position: fixed;
-  inset: 0;
-  background-image: radial-gradient(#00ffd0 1px, transparent 1px);
-  background-size: 80px 80px;
-  animation: particleMove 40s linear infinite;
-  opacity: 0.12;
-  z-index: -1;
+  top: 0;
+  width: 100%;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(6,11,20,0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,240,255,0.1);
+  z-index: 1000;
 }
 
-@keyframes particleMove {
-  from { transform: translateY(0); }
-  to { transform: translateY(-200px); }
-}
-
-  .cert {
-  background: #111a2e;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 25px;
-  border: 1px solid rgba(0,255,200,0.1);
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 20px;
-  align-items: center;
+nav a {
+  color: #8aa0b5;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 14px;
   transition: 0.3s;
 }
 
-.cert:hover {
-  border-color: rgba(0,255,200,0.3);
+nav a:hover {
+  color: #00F0FF;
 }
 
-.cert img {
+/* ================= HERO ================= */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 10%;
+}
+
+.hero h1 {
+  font-size: 42px;
+  color: #00F0FF;
+  margin-bottom: 15px;
+}
+
+.hero h2 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #8aa0b5;
+  margin-bottom: 25px;
+}
+
+.hero p {
+  max-width: 700px;
+  line-height: 1.6;
+  color: #a5b4c3;
+}
+
+/* ================= SECTIONS ================= */
+
+section {
+  padding: 100px 10%;
+}
+
+.section-title {
+  font-size: 26px;
+  color: #00F0FF;
+  margin-bottom: 50px;
+}
+
+/* ================= GLOW CARDS ================= */
+
+.card {
+  background: #0d1524;
+  border: 1px solid rgba(0,240,255,0.15);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  border-color: #00F0FF;
+  box-shadow: 0 0 25px rgba(0,240,255,0.15);
+  transform: translateY(-5px);
+}
+
+/* ================= DASHBOARD PREVIEW ================= */
+
+.dashboard-preview {
   width: 100%;
   border-radius: 8px;
+  margin-top: 20px;
+  border: 1px solid rgba(0,240,255,0.2);
+  max-height: 350px;
+  object-fit: cover;
 }
 
-.cert-meta {
-  font-size: 13px;
-  color: #38bdf8;
-  margin: 6px 0;
-}
+/* ================= FOOTER ================= */
 
-.cert-desc {
+footer {
+  text-align: center;
+  padding: 40px 10%;
+  color: #64748b;
   font-size: 14px;
-  color: #94a3b8;
-  line-height: 1.6;
-}
-
-@media(max-width: 700px) {
-  .cert {
-    grid-template-columns: 1fr;
-  }
 }
 
 </style>
@@ -107,44 +152,8 @@ body::before {
 
 <body>
 
-<div class="particles"></div>
-
-<!-- Your content sections go below -->
-
-<section>
-  <h1 style="padding:120px 10%;">Your content goes here</h1>
-</section>
-
-<footer>
-  Built with GitHub Pages | Real-Time Operations Portfolio
-</footer>
-
-<script>
-
-/* Scroll animation */
-const sections = document.querySelectorAll("section");
-
-window.addEventListener("scroll", () => {
-  sections.forEach(section => {
-    const position = section.getBoundingClientRect().top;
-    if (position < window.innerHeight - 100) {
-      section.classList.add("visible");
-    }
-  });
-});
-
-</script>
-
-</body>
-</html>
-
-
-<body>
-
-<div class="particles"></div>
-
 <nav>
-  <div><strong>Yash Shirture</strong></div>
+  <div><strong style="color:#00F0FF;">Yash Shirture</strong></div>
   <div>
     <a href="#about">About</a>
     <a href="#cases">Case Studies</a>
@@ -153,416 +162,41 @@ window.addEventListener("scroll", () => {
     <a href="#contact">Contact</a>
   </div>
 </nav>
+
+<!-- HERO -->
 <section class="hero" id="about">
-  <div class="hero-wrapper">
-
-    <div class="hero-left">
-      <img src="myownprofile.png" alt="Yash Shirture" class="profile-img">
-    </div>
-
-    <div class="hero-right">
-      <h1>Yash Shirture</h1>
-      <h2>Real-Time Business Operations & Data Specialist</h2>
-
-      <p class="hero-summary">
-        I design structured reporting systems that transform live operational data 
-        into decision-ready intelligence. My focus lies in sales performance visibility, 
-        KPI modeling, and operational control frameworks that improve monitoring clarity 
-        and executive review efficiency.
-      </p>
-
-      <div class="hero-highlights">
-        <div>• Operational KPI Architecture</div>
-        <div>• Sales & Inventory Performance Reporting</div>
-        <div>• Structured Data Validation Systems</div>
-        <div>• Executive Dashboard Design</div>
-      </div>
-
-      <div class="hero-cta">
-        <a href="#cases" class="primary-btn">View Case Studies</a>
-        <a href="Yash_Shirture_Resume.pdf" download class="secondary-btn">Download Resume</a>
-      </div>
-
-    </div>
-
+  <div>
+    <h1>Real-Time Business Operations & Data Specialist</h1>
+    <h2>Structured Reporting Architecture • KPI Systems • Executive Dashboards</h2>
+    <p>
+      I design layered reporting systems that transform live operational datasets
+      into structured intelligence. My focus lies in KPI engineering, risk visibility,
+      and decision-support frameworks aligned with enterprise performance control.
+    </p>
   </div>
 </section>
 
-
-<!-- ================= CASE STUDIES ================= -->
+<!-- CASE STUDIES -->
 <section id="cases">
+  <h2 class="section-title">Operational Case Studies</h2>
 
-<h2 class="section-title">Operational Case Studies</h2>
-
-<!-- CASE 1 -->
-<div class="case-module">
-
-  <div class="case-header" onclick="toggleCase(this)">
+  <div class="card">
     <h3>Sales Performance Optimization Dashboard</h3>
-    <span class="expand-icon">+</span>
+    <p>Structured KPI model for revenue visibility and executive performance tracking.</p>
+    <img src="pizza_dashboard.png" class="dashboard-preview">
   </div>
 
-  <div class="case-content">
-
-    <img src="pizza_dashboard.png" alt="Sales Performance Dashboard" class="dashboard-image">
-
-    <div class="case-block">
-      <h4>Business Problem</h4>
-      <p>
-        Revenue performance lacked consolidated visibility across product categories,
-        peak demand windows, and operational KPIs.
-      </p>
-    </div>
-
-    <div class="case-block">
-      <h4>Operational Context</h4>
-      <p>
-        Required a structured reporting system capable of identifying sales drivers,
-        monitoring order volume fluctuations, and supporting executive-level
-        performance review.
-      </p>
-    </div>
-
-    <div class="case-block">
-      <h4>Reporting Architecture</h4>
-      <ul>
-        <li>Layer 1: Cleaned transactional dataset with validation logic</li>
-        <li>Layer 2: Aggregated KPI calculations using Pivot & formula modeling</li>
-        <li>Layer 3: Dynamic visual layer with slicers and filter controls</li>
-        <li>Layer 4: Executive summary view for rapid decision interpretation</li>
-      </ul>
-    </div>
-
-    <div class="case-block">
-      <h4>Operational Impact</h4>
-      <p>
-        Improved visibility into revenue trends and high-performing products,
-        enabling faster analysis cycles and clearer strategic insights.
-      </p>
-    </div>
-
-    <a href="https://github.com/yashshirture/Pizza-Sales-Reporting-System" target="_blank" class="case-link">
-      View Technical Breakdown →
-    </a>
-
-  </div>
-</div>
-
-<!-- CASE 2 -->
-<div class="case-module">
-
-  <div class="case-header" onclick="toggleCase(this)">
-    <h3>Inventory Risk Control & Monitoring System</h3>
-    <span class="expand-icon">+</span>
+  <div class="card">
+    <h3>Inventory Risk Control System</h3>
+    <p>Threshold-based monitoring framework for stock exposure and operational control.</p>
+    <img src="inventory_dashboard.png" class="dashboard-preview">
   </div>
 
-  <div class="case-content">
-
-    <img src="inventory_dashboard.png" alt="Inventory Dashboard" class="dashboard-image">
-
-    <div class="case-block">
-      <h4>Business Problem</h4>
-      <p>
-        Inconsistent tracking of stock levels created exposure to overstock and stock-out risks.
-      </p>
-    </div>
-
-    <div class="case-block">
-      <h4>Operational Context</h4>
-      <p>
-        Required a monitoring framework capable of highlighting risk thresholds,
-        identifying inventory inefficiencies, and supporting supply planning.
-      </p>
-    </div>
-
-    <div class="case-block">
-      <h4>Reporting Architecture</h4>
-      <ul>
-        <li>Data validation rules to prevent structural errors</li>
-        <li>Threshold-based risk flagging system</li>
-        <li>Conditional formatting for anomaly detection</li>
-        <li>Multi-layer inventory KPI view</li>
-      </ul>
-    </div>
-
-    <div class="case-block">
-      <h4>Operational Impact</h4>
-      <p>
-        Enhanced visibility into inventory exposure and improved early risk detection
-        for stock imbalances.
-      </p>
-    </div>
-
-    <a href="https://github.com/yashshirture/Inventory-Risk-Control-System" target="_blank" class="case-link">
-      View Technical Breakdown →
-    </a>
-
-  </div>
-</div>
-
-<!-- CASE 3 -->
-<div class="case-module">
-
-  <div class="case-header" onclick="toggleCase(this)">
-    <h3>Risk Monitoring & Incident Pattern Dashboard</h3>
-    <span class="expand-icon">+</span>
-  </div>
-
-  <div class="case-content">
-
-    <img src="road_accident_dashboard.png" alt="Risk Monitoring Dashboard" class="dashboard-image">
-
-    <div class="case-block">
-      <h4>Business Problem</h4>
-      <p>
-        Lack of structured visualization for identifying high-risk zones and long-term incident patterns.
-      </p>
-    </div>
-
-    <div class="case-block">
-      <h4>Operational Context</h4>
-      <p>
-        Required analytical reporting capable of detecting trend clusters,
-        supporting safety prioritization, and enabling executive overview.
-      </p>
-    </div>
-
-    <div class="case-block">
-      <h4>Reporting Architecture</h4>
-      <ul>
-        <li>Structured dataset transformation & cleanup</li>
-        <li>Trend aggregation using pivot modeling</li>
-        <li>Visual clustering via heat-map style analytics</li>
-        <li>Executive performance summary panel</li>
-      </ul>
-    </div>
-
-    <div class="case-block">
-      <h4>Operational Impact</h4>
-      <p>
-        Improved interpretability of risk exposure and simplified pattern recognition
-        for strategic planning.
-      </p>
-    </div>
-
-    <a href="https://github.com/yashshirture/Road-Accident-Risk-Monitoring-System" target="_blank" class="case-link">
-      View Technical Breakdown →
-    </a>
-
-  </div>
-</div>
-
-</section>
-
-
-<section id="capabilities">
-<h2 class="section-title">Core Operational Capabilities</h2>
-
-<div class="skills-grid">
-
-  <div class="skill-card">
-    <h4>Reporting Architecture & KPI Engineering</h4>
-    <p>
-      Design of layered reporting systems with structured data models, 
-      executive KPI summaries, and scalable dashboard frameworks.
-    </p>
-  </div>
-
-  <div class="skill-card">
-    <h4>Sales & Operations Performance Monitoring</h4>
-    <p>
-      Development of structured visibility systems for revenue tracking, 
-      operational diagnostics, and trend-based performance analysis.
-    </p>
-  </div>
-
-  <div class="skill-card">
-    <h4>SQL Data Structuring & Aggregation Logic</h4>
-    <p>
-      Reliable query construction, grouped metric aggregation, 
-      and transformation of raw datasets into structured reporting inputs.
-    </p>
-  </div>
-
-  <div class="skill-card">
-    <h4>Business Intelligence Foundations (Power BI)</h4>
-    <p>
-      Data modeling, Power Query transformation, and interactive reporting 
-      layers for executive-level insight generation.
-    </p>
-  </div>
-
-</div>
-</section>
-
-  <section id="certifications">
-<h2 class="section-title">Certifications & Professional Development</h2>
-
-<div class="cert">
-
-  <img src="excel-cert.png" alt="Microsoft Excel Certification">
-
-  <div class="cert-details">
-    <strong>Microsoft Excel — Excel from Beginner to Advanced</strong>
-    <p class="cert-meta">Start: April 2025 | Completed: May 2025</p>
-    <p class="cert-desc">
-      Advanced formula logic, pivot modeling, data validation systems, 
-      and executive dashboard structuring techniques.
-    </p>
-  </div>
-
-</div>
-
-<div class="cert">
-
-  <img src="deloitte-forage.jpg" alt="Deloitte Data Analytics Job Simulation">
-
-  <div class="cert-details">
-    <strong>Deloitte Australia — Data Analytics Job Simulation (Forage)</strong>
-    <p class="cert-meta">Start: December 2025 | Completed: January 2026</p>
-    <p class="cert-desc">
-      Data cleaning, analytical reporting, business insight communication, 
-      and structured decision-support development.
-    </p>
-  </div>
-
-</div>
-
-</section>
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact">
-  <h2 class="section-title">Let’s Connect</h2>
-
-  <div class="contact-wrapper">
-
-    <div class="contact-left">
-      <h3>Open to Real-Time Operations & Reporting Roles</h3>
-      <p>
-        I am available for full-time opportunities in operations performance, 
-        reporting architecture, and data-driven business environments.
-      </p>
-    </div>
-
-    <div class="contact-right">
-
-      <div class="contact-item">
-        <span>Email</span>
-        <a href="mailto:yashatwork623@gmail.com">
-          yashatwork623@gmail.com
-        </a>
-      </div>
-
-      <div class="contact-item">
-        <span>LinkedIn</span>
-        <a href="https://www.linkedin.com/in/yash-shirture-635153202/" target="_blank">
-          linkedin.com/in/yash-shirture
-        </a>
-      </div>
-
-      <a href="Yash_Shirture_Resume.pdf" download class="resume-btn">
-        Download Resume
-      </a>
-
-    </div>
-
-  </div>
 </section>
 
 <footer>
-  © 2026 Yash Shirture | Real-Time Business Operations Portfolio
+© 2026 Yash Shirture | Dark Data Lab Portfolio
 </footer>
-
-  
-
-
-
-
-
-
-<script>
-
-/* ================= CONTACT ================= */
-
-.contact-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.contact-left h3 {
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-.contact-left p {
-  color: #94a3b8;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.contact-item {
-  margin-bottom: 20px;
-}
-
-.contact-item span {
-  display: block;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #38bdf8;
-  margin-bottom: 5px;
-}
-
-.contact-item a {
-  color: #00e5c4;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 15px;
-}
-
-.contact-item a:hover {
-  color: #38bdf8;
-}
-
-@media(max-width: 900px) {
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-  }
-}
-
-</script>
-  <script>
-<script>
-
-/* Expandable Case Modules */
-function toggleCase(element) {
-  const module = element.parentElement;
-  module.classList.toggle("active");
-
-  const icon = element.querySelector(".expand-icon");
-  if (icon) {
-    icon.textContent = module.classList.contains("active") ? "−" : "+";
-  }
-}
-
-/* Section Reveal */
-const sections = document.querySelectorAll("section");
-
-window.addEventListener("scroll", () => {
-  sections.forEach(section => {
-    if (section.getBoundingClientRect().top < window.innerHeight - 100) {
-      section.classList.add("visible");
-    }
-  });
-});
-
-</script>
-
-</script>
-
 
 </body>
 </html>
