@@ -58,10 +58,7 @@ nav a:hover {
     border: 2px solid #38bdf8;
 }
 
-h1 {
-    font-size: 38px;
-    margin-bottom: 10px;
-}
+h1 { font-size: 38px; margin-bottom: 10px; }
 
 h2 {
     margin-top: 80px;
@@ -70,24 +67,18 @@ h2 {
     font-size: 26px;
 }
 
-h3 {
-    color: #ffffff;
-}
+h3 { color: #ffffff; }
 
 .tagline {
     color: #94a3b8;
     font-size: 18px;
 }
 
-.section {
-    margin-bottom: 50px;
-}
-
 .card {
     background: #111827;
     padding: 25px;
     border-radius: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     border: 1px solid #1f2937;
     transition: 0.3s ease;
 }
@@ -95,6 +86,12 @@ h3 {
 .card:hover {
     border-color: #38bdf8;
     transform: translateY(-3px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 a {
@@ -119,6 +116,20 @@ a {
     transition: width 2s ease;
 }
 
+.cert-card {
+    background: #111827;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #1f2937;
+}
+
+.cert-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
 .footer {
     margin-top: 80px;
     font-size: 14px;
@@ -134,6 +145,7 @@ a {
   <a href="#projects">Case Studies</a>
   <a href="#architecture">Reporting Architecture</a>
   <a href="#skills">Capabilities</a>
+  <a href="#certifications">Certifications</a>
   <a href="#contact">Contact</a>
 </nav>
 
@@ -151,88 +163,70 @@ a {
     </p>
 
     <p>
-      Specializing in transforming live operational data into structured reporting systems that improve visibility, monitoring control, and decision speed.  
-      Focused on data reliability, reporting clarity, and operational efficiency.
+      Specializing in transforming live operational data into structured reporting systems 
+      that improve visibility, monitoring control, and decision speed.
     </p>
   </div>
 </section>
 
 <!-- CASE STUDIES -->
 <section id="projects">
-
-<h2>Selected Operational Case Studies</h2>
+<h2>Operational Case Studies</h2>
 
 <div class="card">
 <h3>Sales Performance Optimization Dashboard</h3>
+<img src="pizza_dashboard.png">
 
-<p><strong>Business Context:</strong> Limited consolidated visibility across revenue streams and sales timing patterns.</p>
-
-<p><strong>Analytical Approach:</strong> Structured transactional datasets, implemented KPI logic layers, and designed dynamic Excel dashboards with filtered performance views.</p>
-
-<p><strong>Operational Impact:</strong> Enabled structured revenue tracking, performance benchmarking, and faster identification of peak revenue intervals.</p>
-
-<p><strong>Operational Use Case:</strong> Suitable for sales leadership reviews, daily performance monitoring, and pipeline diagnostics.</p>
+<p><strong>Business Context:</strong> Limited consolidated visibility across revenue streams.</p>
+<p><strong>Analytical Approach:</strong> Structured datasets, KPI modeling, dynamic dashboard architecture.</p>
+<p><strong>Operational Impact:</strong> Strengthened performance monitoring clarity and executive reporting structure.</p>
+<p><strong>Operational Use Case:</strong> Daily sales reviews, pipeline diagnostics, trend evaluation.</p>
 
 <a href="https://github.com/yashshirture/Pizza-Sales-Reporting-System" target="_blank">View Technical Breakdown</a>
 </div>
 
 <div class="card">
 <h3>Inventory Risk Control & Monitoring Framework</h3>
+<img src="inventory_dashboard.png">
 
-<p><strong>Business Context:</strong> Inconsistent stock visibility and delayed identification of overstock/shortage conditions.</p>
-
-<p><strong>Analytical Approach:</strong> Designed structured validation rules, threshold tracking logic, and exception indicators for stock imbalance monitoring.</p>
-
-<p><strong>Operational Impact:</strong> Improved risk visibility across inventory cycles and strengthened monitoring accuracy.</p>
-
-<p><strong>Operational Use Case:</strong> Applicable for supply chain review meetings and proactive stock risk mitigation.</p>
+<p><strong>Business Context:</strong> Inconsistent stock visibility and delayed risk identification.</p>
+<p><strong>Analytical Approach:</strong> Threshold logic design, validation rules, structured KPI monitoring.</p>
+<p><strong>Operational Impact:</strong> Improved risk detection clarity and reporting discipline.</p>
+<p><strong>Operational Use Case:</strong> Supply chain monitoring and risk review sessions.</p>
 
 <a href="https://github.com/yashshirture/Inventory-Risk-Control-System" target="_blank">View Technical Breakdown</a>
 </div>
 
 <div class="card">
 <h3>Risk Pattern & Incident Monitoring Analytics</h3>
+<img src="road_accident_dashboard.png">
 
-<p><strong>Business Context:</strong> Lack of structured visibility into trend-based risk concentration zones.</p>
-
-<p><strong>Analytical Approach:</strong> Performed data normalization, trend aggregation, and heat-style visual risk segmentation.</p>
-
-<p><strong>Operational Impact:</strong> Enhanced clarity in identifying recurring patterns and monitoring high-risk zones.</p>
-
-<p><strong>Operational Use Case:</strong> Designed for strategic safety reviews and periodic risk evaluation sessions.</p>
+<p><strong>Business Context:</strong> Limited structured visibility into trend-based risk concentration zones.</p>
+<p><strong>Analytical Approach:</strong> Data normalization, trend aggregation, heat-style segmentation modeling.</p>
+<p><strong>Operational Impact:</strong> Enhanced identification of recurring risk patterns.</p>
+<p><strong>Operational Use Case:</strong> Strategic risk reviews and safety monitoring evaluation.</p>
 
 <a href="https://github.com/yashshirture/Road-Accident-Risk-Monitoring-System" target="_blank">View Technical Breakdown</a>
 </div>
-
 </section>
 
 <!-- REPORTING ARCHITECTURE -->
 <section id="architecture">
-
 <h2>Reporting Architecture</h2>
 
 <div class="card">
-<p>
-Operational dashboards are structured using a layered approach:
-</p>
-
 <ul>
-<li><strong>Layer 1:</strong> Raw transactional dataset structuring & validation</li>
-<li><strong>Layer 2:</strong> KPI logic modeling & aggregation rules</li>
-<li><strong>Layer 3:</strong> Visualization layer with dynamic filters & control elements</li>
-<li><strong>Layer 4:</strong> Executive summary view for decision-level interpretation</li>
+<li>Layer 1: Raw data structuring & validation framework</li>
+<li>Layer 2: KPI logic modeling & aggregation rules</li>
+<li>Layer 3: Dynamic visualization with filter control</li>
+<li>Layer 4: Executive-level reporting summary view</li>
 </ul>
-
-<p>
-Emphasis placed on audit-friendly logic, consistent data formatting, and reusable reporting frameworks.
-</p>
+<p>Emphasis on consistency, audit-friendly logic, and scalable dashboard design.</p>
 </div>
-
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-
 <h2>Core Capabilities</h2>
 
 <div class="skill">
@@ -259,19 +253,34 @@ Emphasis placed on audit-friendly logic, consistent data formatting, and reusabl
 <p>Power BI Reporting (Foundational)</p>
 <div class="skill-bar"><div class="skill-level" data-level="70%"></div></div>
 </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+<h2>Certifications & Virtual Experience</h2>
+
+<div class="cert-card">
+<img src="excel-cert.png">
+<p><strong>Microsoft Excel — Excel from Beginner to Advanced</strong> — Udemy</p>
+<p><small>April 2025 – May 2025</small></p>
+</div>
+
+<div class="cert-card">
+<img src="deloitte-forage.jpg">
+<p><strong>Deloitte Australia — Data Analytics Job Simulation</strong> — Forage</p>
+<p><small>December 2025 – January 2026</small></p>
+</div>
 
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-
 <h2>Professional Contact</h2>
 
 <p>
 Email: <a href="mailto:yashatwork623@gmail.com">yashatwork623@gmail.com</a><br>
 LinkedIn: <a href="https://www.linkedin.com/in/yash-shirture-635153202/" target="_blank">linkedin.com/in/yash-shirture</a>
 </p>
-
 </section>
 
 <div class="footer">
