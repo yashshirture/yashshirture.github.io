@@ -28,22 +28,57 @@ body {
 
 /* ---------------- SUBTLE ENTERPRISE BACKGROUND ---------------- */
 
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #0b1220;
+  color: #e6edf3;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated flowing gradient background */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background:
-    linear-gradient(rgba(0,255,200,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,200,0.05) 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: gridMove 20s linear infinite;
-  z-index: -1;
+  background: linear-gradient(
+    130deg,
+    #0b1220,
+    #0f1f3d,
+    #102e4a,
+    #0b1220
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 20s ease infinite;
+  z-index: -3;
 }
 
-@keyframes gridMove {
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+  /* Subtle moving data grid */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,255,200,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,200,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridFlow 25s linear infinite;
+  z-index: -2;
+}
+
+@keyframes gridFlow {
   from { transform: translateY(0); }
   to { transform: translateY(60px); }
 }
+
+
 
 /* ---------------- NAV ---------------- */
 
@@ -217,6 +252,79 @@ footer {
   color: #64748b;
   font-size: 14px;
 }
+  .section-title {
+  font-size: 30px;
+  margin-bottom: 40px;
+  color: #00e5c4;
+}
+
+.case-module {
+  background: #121a2f;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(0,255,200,0.08);
+  transition: 0.3s ease;
+}
+
+.case-module:hover {
+  border-color: rgba(0,255,200,0.3);
+}
+
+.case-header {
+  padding: 20px 25px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f172a;
+}
+
+.case-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.expand-icon {
+  font-size: 20px;
+  color: #00e5c4;
+}
+
+.case-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+  padding: 0 25px;
+}
+
+.case-module.active .case-content {
+  max-height: 2000px;
+  padding: 25px;
+}
+
+.dashboard-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.case-block {
+  margin-bottom: 20px;
+}
+
+.case-block h4 {
+  margin-bottom: 8px;
+  color: #38bdf8;
+}
+
+.case-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #00e5c4;
+  text-decoration: none;
+  font-weight: 600;
+}
+
 
 </style>
 </head>
@@ -248,32 +356,177 @@ footer {
 </section>
 
 <!-- CASE STUDIES -->
-<section id="cases">
-  <h3>Operational Case Studies</h3>
+<section id="projects">
 
-  <div class="case">
-    <div class="case-header">Sales Performance Optimization Dashboard</div>
-    <div class="case-content">
-      <img src="pizza_dashboard.png">
-      <p><strong>Business Context:</strong> Fragmented revenue visibility across reporting views.</p>
-      <p><strong>Reporting Architecture:</strong> Structured KPI layer with dynamic segmentation and time-based trend modeling.</p>
-      <p><strong>Operational Use Case:</strong> Executive monitoring of performance drivers and peak revenue periods.</p>
-      <a href="https://github.com/yashshirture/Pizza-Sales-Reporting-System" target="_blank">View Technical Breakdown</a>
-    </div>
+<h2 class="section-title">Operational Case Studies</h2>
+
+
+<!-- CASE 1 -->
+<div class="case-module">
+
+  <div class="case-header" onclick="toggleCase(this)">
+    <h3>Sales Performance Optimization Dashboard</h3>
+    <span class="expand-icon">+</span>
   </div>
 
-  <div class="case">
-    <div class="case-header">Inventory Risk Monitoring System</div>
-    <div class="case-content">
-      <img src="inventory_dashboard.png">
-      <p><strong>Business Context:</strong> Limited forward visibility into stock imbalance.</p>
-      <p><strong>Reporting Architecture:</strong> Threshold logic, structured validation layers, risk categorization model.</p>
-      <p><strong>Operational Use Case:</strong> Real-time risk identification to support supply stability.</p>
-      <a href="https://github.com/yashshirture/Inventory-Risk-Control-System" target="_blank">View Technical Breakdown</a>
+  <div class="case-content">
+
+    <img src="pizza_dashboard.png" alt="Sales Performance Dashboard" class="dashboard-image">
+
+    <div class="case-block">
+      <h4>Business Problem</h4>
+      <p>
+        Revenue performance lacked consolidated visibility across product categories,
+        peak demand windows, and operational KPIs.
+      </p>
     </div>
+
+    <div class="case-block">
+      <h4>Operational Context</h4>
+      <p>
+        Required a structured reporting system capable of identifying sales drivers,
+        monitoring order volume fluctuations, and supporting executive-level
+        performance review.
+      </p>
+    </div>
+
+    <div class="case-block">
+      <h4>Reporting Architecture</h4>
+      <ul>
+        <li>Layer 1: Cleaned transactional dataset with validation logic</li>
+        <li>Layer 2: Aggregated KPI calculations using Pivot & formula modeling</li>
+        <li>Layer 3: Dynamic visual layer with slicers and filter controls</li>
+        <li>Layer 4: Executive summary view for rapid decision interpretation</li>
+      </ul>
+    </div>
+
+    <div class="case-block">
+      <h4>Operational Impact</h4>
+      <p>
+        Improved visibility into revenue trends and high-performing products,
+        enabling faster analysis cycles and clearer strategic insights.
+      </p>
+    </div>
+
+    <a href="https://github.com/yashshirture/Pizza-Sales-Reporting-System" target="_blank" class="case-link">
+      View Technical Breakdown →
+    </a>
+
   </div>
+</div>
+
+
+
+<!-- CASE 2 -->
+<div class="case-module">
+
+  <div class="case-header" onclick="toggleCase(this)">
+    <h3>Inventory Risk Control & Monitoring System</h3>
+    <span class="expand-icon">+</span>
+  </div>
+
+  <div class="case-content">
+
+    <img src="inventory_dashboard.png" alt="Inventory Dashboard" class="dashboard-image">
+
+    <div class="case-block">
+      <h4>Business Problem</h4>
+      <p>
+        Inconsistent tracking of stock levels created exposure to overstock and
+        stock-out risks.
+      </p>
+    </div>
+
+    <div class="case-block">
+      <h4>Operational Context</h4>
+      <p>
+        Required a monitoring framework capable of highlighting risk thresholds,
+        identifying inventory inefficiencies, and supporting supply planning.
+      </p>
+    </div>
+
+    <div class="case-block">
+      <h4>Reporting Architecture</h4>
+      <ul>
+        <li>Data validation rules to prevent structural errors</li>
+        <li>Threshold-based risk flagging system</li>
+        <li>Conditional formatting for anomaly detection</li>
+        <li>Multi-layer inventory KPI view</li>
+      </ul>
+    </div>
+
+    <div class="case-block">
+      <h4>Operational Impact</h4>
+      <p>
+        Enhanced visibility into inventory exposure and improved early risk detection
+        for stock imbalances.
+      </p>
+    </div>
+
+    <a href="https://github.com/yashshirture/Inventory-Risk-Control-System" target="_blank" class="case-link">
+      View Technical Breakdown →
+    </a>
+
+  </div>
+</div>
+
+
+
+<!-- CASE 3 -->
+<div class="case-module">
+
+  <div class="case-header" onclick="toggleCase(this)">
+    <h3>Risk Monitoring & Incident Pattern Dashboard</h3>
+    <span class="expand-icon">+</span>
+  </div>
+
+  <div class="case-content">
+
+    <img src="road_accident_dashboard.png" alt="Risk Monitoring Dashboard" class="dashboard-image">
+
+    <div class="case-block">
+      <h4>Business Problem</h4>
+      <p>
+        Lack of structured visualization for identifying high-risk zones
+        and long-term incident patterns.
+      </p>
+    </div>
+
+    <div class="case-block">
+      <h4>Operational Context</h4>
+      <p>
+        Required analytical reporting capable of detecting trend clusters,
+        supporting safety prioritization, and enabling executive overview.
+      </p>
+    </div>
+
+    <div class="case-block">
+      <h4>Reporting Architecture</h4>
+      <ul>
+        <li>Structured dataset transformation & cleanup</li>
+        <li>Trend aggregation using pivot modeling</li>
+        <li>Visual clustering via heat-map style analytics</li>
+        <li>Executive performance summary panel</li>
+      </ul>
+    </div>
+
+    <div class="case-block">
+      <h4>Operational Impact</h4>
+      <p>
+        Improved interpretability of risk exposure and simplified pattern
+        recognition for strategic planning.
+      </p>
+    </div>
+
+    <a href="https://github.com/yashshirture/Road-Accident-Risk-Monitoring-System" target="_blank" class="case-link">
+      View Technical Breakdown →
+    </a>
+
+  </div>
+</div>
 
 </section>
+
 
 <!-- CAPABILITIES -->
 <section id="capabilities">
@@ -335,6 +588,55 @@ document.querySelectorAll(".case-header").forEach(header => {
   });
 });
 </script>
+
+<div class="particles"></div>
+.particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image: radial-gradient(#00ffd0 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: particleMove 40s linear infinite;
+  opacity: 0.15;
+}
+
+@keyframes particleMove {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
+}
+  section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+<script>
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  sections.forEach(section => {
+    const position = section.getBoundingClientRect().top;
+    if (position < window.innerHeight - 100) {
+      section.classList.add("visible");
+    }
+  });
+});
+</script>
+  <script>
+function toggleCase(element) {
+  const module = element.parentElement;
+  module.classList.toggle("active");
+
+  const icon = element.querySelector(".expand-icon");
+  icon.textContent = module.classList.contains("active") ? "−" : "+";
+}
+</script>
+
 
 </body>
 </html>
