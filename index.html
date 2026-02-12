@@ -4,101 +4,143 @@
   <meta charset="UTF-8">
   <title>Yash Shirture | Sales Operations & Data Specialist Portfolio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f3f4f6;
-      color: #1f2937;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0px 0px 12px rgba(0,0,0,0.08);
-    }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: #e5e7eb;
+  }
 
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 20px;
-    }
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 30px;
+  }
 
-   .profile-pic {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: top;
-  border: 3px solid #2563eb;
-  image-rendering: crisp-edges;
-}
+  .hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
 
-      h1 {
-      color: #2563eb;
-      margin-bottom: 5px;
-    }
+  .profile-pic {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #3b82f6;
+    box-shadow: 0 0 30px rgba(59,130,246,0.5);
+  }
 
-    .tagline {
-      font-size: 16px;
-      color: #374151;
-    }
+  h1 {
+    font-size: 42px;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
 
-    h2 {
-      color: #1e40af;
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 6px;
-      margin-top: 25px;
-    }
+  .tagline {
+    font-size: 18px;
+    color: #94a3b8;
+    margin-bottom: 20px;
+  }
 
-    a {
-      color: #2563eb;
-      text-decoration: none;
-      font-weight: 600;
-    }
+  .intro {
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 600px;
+  }
 
-    a:hover {
-      text-decoration: underline;
-    }
+  h2 {
+    margin-top: 60px;
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #3b82f6;
+  }
 
-    .project-list li {
-      margin-bottom: 8px;
-    }
+  .project, .cert {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 14px;
+    margin-bottom: 30px;
+    transition: 0.3s ease;
+  }
 
-    .footer {
-      margin-top: 20px;
-      font-size: 14px;
-      color: #6b7280;
-    }
-  </style>
+  .project:hover, .cert:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(59,130,246,0.3);
+  }
+
+  .project img,
+  .cert img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+
+  ul {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+
+  a {
+    color: #60a5fa;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #93c5fd;
+  }
+
+  .skills-list li {
+    margin-bottom: 10px;
+  }
+
+  .footer {
+    margin-top: 60px;
+    text-align: center;
+    color: #64748b;
+  }
+
+  .contact {
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 14px;
+    margin-top: 40px;
+  }
+
+</style>
 </head>
 <body>
 
 <div class="container">
 
-  <div class="header">
-    <img 
-  src="myownprofile.png" 
-  alt="Yash Shirture" 
-  class="profile-pic"
-  loading="eager"
->
-      <div>
-      <h1>Yash Shirture</h1>
-      <p class="tagline">
-        Sales Operations & Data Specialist | Dashboards • Data Cleaning • KPI Reporting
-      </p>
-    </div>
-  </div>
+ <div class="hero">
+  <img src="myownprofile.png" alt="Yash Shirture" class="profile-pic">
 
-  <p>
-    I transform chaotic data into structured intelligence that leaders can trust.
-Every dashboard I build is designed for accuracy, speed, and impact - because insights mean nothing if they can’t be acted upon.
-  </p>
+  <div>
+    <h1>Yash Shirture</h1>
+    <p class="tagline">
+      Sales Operations & Data Specialist | Excel • SQL • Power BI
+    </p>
+
+    <p class="intro">
+      I transform chaotic business data into structured intelligence leaders can act on.
+      I build performance dashboards that improve decision speed, visibility, and operational control.
+    </p>
+  </div>
+</div>
 
 <h2>📊 Portfolio Projects</h2>
 
@@ -159,15 +201,48 @@ Every dashboard I build is designed for accuracy, speed, and impact - because in
   </a>
 </div>
 
-<h2>🧠 Skills</h2>
-<ul>
-  <li><strong>Excel for Business Decision-Making:</strong> Pivot Tables, XLOOKUP, SUMIFS, Dynamic Dashboards, Scenario Analysis</li>
-  <li><strong>Data Engineering (Excel):</strong> Structuring raw data, validation rules, error handling, and automation-ready formatting</li>
-  <li><strong>KPI & Performance Reporting:</strong> Building actionable dashboards for sales, operations, and risk monitoring</li>
-  <li><strong>Business & Sales Operations Analytics:</strong> Trend analysis, pipeline tracking, and performance diagnostics</li>
-  <li><strong>Data Quality & Reliability:</strong> Deduplication, consistency checks, and audit-friendly documentation</li>
-  <li><strong>SQL (Basic):</strong> SELECT queries, WHERE filters, JOINs, GROUP BY, and basic aggregations</li>
-  <li><strong>Power BI (Basic):</strong> Data import, cleaning in Power Query, simple DAX measures, and interactive visuals</li>
+<h2>Skills</h2>
+
+<ul class="skills-list">
+
+  <style> 
+  .skills-list {
+  margin-top: 15px;
+  line-height: 1.8;
+  padding-left: 20px;
+}
+
+.skills-list li {
+  margin-bottom: 10px;
+}
+    </style>
+<li>
+    <strong>Advanced Excel Analytics:</strong> Pivot Tables, XLOOKUP, SUMIFS, Dynamic Dashboards, Scenario Analysis, Structured KPI Models
+  </li>
+
+  <li>
+    <strong>Data Structuring & Validation:</strong> Raw data cleaning, deduplication, error handling, validation rules, audit-ready formatting
+  </li>
+
+  <li>
+    <strong>KPI & Performance Reporting:</strong> Sales reporting, operations tracking, trend analysis, performance diagnostics
+  </li>
+
+  <li>
+    <strong>Business & Sales Operations Analysis:</strong> Revenue analysis, inventory risk tracking, pipeline monitoring, demand insights
+  </li>
+
+  <li>
+    <strong>SQL (Foundational):</strong> SELECT statements, WHERE filters, JOIN operations, GROUP BY aggregations
+  </li>
+
+  <li>
+    <strong>Power BI (Foundational):</strong> Data modeling, Power Query cleaning, basic DAX measures, interactive dashboards
+  </li>
+
+  <li>
+    <strong>Data Quality & Documentation:</strong> Consistency checks, structured templates, reusable reporting frameworks
+  </li>
 </ul>
 
 <h2>🎓 Certifications & Virtual Experience</h2>
@@ -186,17 +261,14 @@ Every dashboard I build is designed for accuracy, speed, and impact - because in
 
 
   <h2>📬 Contact</h2>
-  <p>
-    📧 Email: <a href="mailto:yashatwork623@gmail.com">yashatwork623@gmail.com</a><br>
-    🔗 LinkedIn: 
-    <a href="https://www.linkedin.com/in/yash-shirture-635153202/" target="_blank">
-      linkedin.com/in/yash-shirture-635153202?
-    </a>
-  </p>
 
-  <p class="footer">
-    Built with GitHub Pages | Last updated: 2026
-  </p>
+<div class="contact">
+  📧 Email: <a href="mailto:yashatwork623@gmail.com">yashatwork623@gmail.com</a><br><br>
+
+  🔗 LinkedIn:
+  <a href="https://www.linkedin.com/in/yash-shirture-635153202/" target="_blank">
+    linkedin.com/in/yash-shirture
+  </a>
 
 </div>
 
