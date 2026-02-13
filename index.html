@@ -19,60 +19,41 @@
 html { scroll-behavior: smooth; }
 
 
-/* ================= EXECUTIVE GRADIENT BACKGROUND ================= */
+/* ================= EXECUTIVE BACKGROUND ================= */
 
 html, body {
   margin: 0;
   padding: 0;
+  background: #050b14;
   overflow-x: hidden;
-  background: #07121c;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Smooth executive gradient layer */
+/* Deep gradient layer */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    #07121c 0%,
-    #081826 40%,
-    #0a2230 70%,
-    #07121c 100%
-  );
   z-index: -3;
+
+  background:
+    radial-gradient(circle at 20% 30%, rgba(0,255,200,0.15), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(0,150,255,0.12), transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(0,255,150,0.05), transparent 60%),
+    linear-gradient(135deg, #050b14 0%, #071523 40%, #050b14 100%);
 }
 
-/* Soft animated glow wash */
+/* Subtle soft blur glow */
 body::after {
   content: "";
   position: fixed;
-  inset: 0;
-  background: radial-gradient(
-    circle at 70% 30%,
-    rgba(0, 255, 200, 0.08),
-    transparent 60%
-  );
-  animation: executiveShift 18s ease-in-out infinite alternate;
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  right: -150px;
   z-index: -2;
-}
-
-/* Slow luxury movement */
-@keyframes executiveShift {
-  0% {
-    background: radial-gradient(
-      circle at 70% 30%,
-      rgba(0, 255, 200, 0.08),
-      transparent 60%
-    );
-  }
-  100% {
-    background: radial-gradient(
-      circle at 30% 70%,
-      rgba(0, 255, 200, 0.08),
-      transparent 60%
-    );
-  }
+  background: radial-gradient(circle, rgba(0,255,200,0.15), transparent 60%);
+  filter: blur(120px);
 }
 
 /* Make sections transparent */
@@ -85,6 +66,7 @@ main,
 .section-glow {
   background: transparent !important;
 }
+
 
 
 
