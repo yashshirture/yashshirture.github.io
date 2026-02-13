@@ -554,56 +554,95 @@ footer {
   font-weight: 500;
   letter-spacing: 0.5px;
 
-/* ================= CONTACT ================= */
+/* ================= CONTACT SECTION ================= */
 
 .contact-section {
-  padding: 100px 10%;
+  padding: 120px 10%;
 }
 
+/* Glowing Executive Contact Card */
 .contact-card {
-  background: linear-gradient(145deg, #0b1c2e, #081422);
-  border: 1px solid rgba(0,255,200,0.2);
+  background: linear-gradient(145deg, #0b1c2b, #081520);
+  border: 1px solid rgba(0,255,200,0.25);
   border-radius: 20px;
-  padding: 50px;
-  transition: 0.4s ease;
+  padding: 60px;
+  max-width: 1000px;
+  margin-top: 40px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+
+  box-shadow:
+    0 0 0 1px rgba(0,255,200,0.08),
+    0 0 45px rgba(0,255,200,0.08),
+    inset 0 0 35px rgba(0,255,200,0.03);
 }
 
+/* Strong Glow on Hover */
 .contact-card:hover {
-  box-shadow: 0 0 35px rgba(0,255,200,0.3);
-  border-color: rgba(0,255,200,0.6);
+  transform: translateY(-6px);
+  border: 1px solid rgba(0,255,200,0.5);
+  box-shadow:
+    0 0 0 1px rgba(0,255,200,0.2),
+    0 0 90px rgba(0,255,200,0.25),
+    0 0 140px rgba(0,255,200,0.08),
+    inset 0 0 45px rgba(0,255,200,0.05);
 }
 
+/* Heading */
 .contact-card h3 {
-  font-size: 22px;
-  margin-bottom: 20px;
+  font-size: 24px;
   color: #ffffff;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
+/* Description */
 .contact-card p {
-  color: #9fb3c8;
-  line-height: 1.7;
+  font-size: 16px;
+  color: #b9c6da;
+  line-height: 1.8;
   margin-bottom: 30px;
-  max-width: 700px;
+  max-width: 800px;
 }
 
+/* Contact Links Container */
 .contact-links {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
+/* Links */
 .contact-links a {
-  color: #00ffd0;
+  color: #00f5d4;
+  font-weight: 500;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 16px;
+  position: relative;
   transition: 0.3s ease;
+}
+
+/* Subtle Underline Animation */
+.contact-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: #00f5d4;
+  transition: 0.3s ease;
+}
+
+.contact-links a:hover::after {
+  width: 100%;
 }
 
 .contact-links a:hover {
   color: #ffffff;
-  text-shadow: 0 0 10px rgba(0,255,200,0.7);
 }
+
 
 
 
@@ -843,29 +882,31 @@ footer {
 
 
 
-
-  <section id="contact" class="contact-section">
-
+<section id="contact" class="contact-section">
   <h2 class="section-title">Let’s Connect</h2>
 
   <div class="contact-card">
-
     <h3>Open to Full-Time, Contract & Freelance Engagements</h3>
 
     <p>
-      Supporting organizations in building KPI architectures, operational
-      performance monitoring systems, and executive-ready reporting frameworks
-      that improve visibility, control, and decision speed.
+      Supporting organizations in building KPI architectures,
+      operational performance monitoring systems, and executive-ready
+      reporting frameworks that enhance visibility, control, and
+      strategic decision-making.
     </p>
 
     <div class="contact-links">
-      <a href="mailto:yashatwork623@gmail.com">yashatwork623@gmail.com</a>
+      <a href="mailto:yashatwork623@gmail.com">
+        yashatwork623@gmail.com
+      </a>
+
       <a href="https://www.linkedin.com/in/yash-shirture-635153202/" target="_blank">
-        https://www.linkedin.com/in/yash-shirture-635153202/
+        LinkedIn Profile
       </a>
     </div>
-
   </div>
+</section>
+
 
 </section>
 
