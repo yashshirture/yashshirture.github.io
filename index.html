@@ -17,57 +17,59 @@
 
 html { scroll-behavior: smooth; }
 
-  /* ================= GLOBAL BACKGROUND ================= */
+/* ================= CYBER GRID BACKGROUND ================= */
 
 body {
   margin: 0;
-  padding: 0;
-  background: #06101f;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background: #050b14;
   color: #ffffff;
   overflow-x: hidden;
-  position: relative;
 }
 
-/* Animated Gradient Layer */
+/* Animated Grid Layer */
 body::before {
-  content: "";
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at 30% 30%, rgba(0,255,200,0.15), transparent 40%),
-              radial-gradient(circle at 70% 70%, rgba(0,150,255,0.15), transparent 40%),
-              radial-gradient(circle at 50% 80%, rgba(0,255,150,0.12), transparent 40%);
-  animation: moveBackground 18s linear infinite;
-  z-index: -2;
-}
-
-/* Grid Overlay */
-body::after {
   content: "";
   position: fixed;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(0,255,200,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,200,0.05) 1px, transparent 1px);
-  background-size: 60px 60px;
-  z-index: -1;
+    linear-gradient(rgba(0,255,200,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,200,0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridMove 20s linear infinite;
+  z-index: -2;
 }
 
-/* Smooth Background Animation */
-@keyframes moveBackground {
+/* Glow Pulse Layer */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(0,255,200,0.08), transparent 60%);
+  animation: pulseGlow 6s ease-in-out infinite alternate;
+  z-index: -3;
+}
+
+/* Grid Movement Animation */
+@keyframes gridMove {
   0% {
-    transform: rotate(0deg) scale(1);
-  }
-  50% {
-    transform: rotate(180deg) scale(1.1);
+    transform: translateY(0px);
   }
   100% {
-    transform: rotate(360deg) scale(1);
+    transform: translateY(60px);
   }
 }
+
+/* Subtle Glow Breathing */
+@keyframes pulseGlow {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
 
 /* ================= NAV ================= */
 
