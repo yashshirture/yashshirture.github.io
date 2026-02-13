@@ -901,31 +901,23 @@ footer {
 </footer>
 
   
-
 <script>
-console.log("AI NETWORK SCRIPT LOADED");
 const canvas = document.getElementById("ai-network");
 const ctx = canvas.getContext("2d");
 
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
-
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 let particles = [];
-const particleCount = 260; // more particles = more intense
+const particleCount = 140; // controlled density
 
 class Particle {
   constructor() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
-    this.size = 2;
-    this.speedX = (Math.random() - 0.5) * 6; // faster
-    this.speedY = (Math.random() - 0.5) * 6;
+    this.size = 1.8;
+    this.speedX = (Math.random() - 0.5) * 1.2; // slower movement
+    this.speedY = (Math.random() - 0.5) * 1.2;
   }
 
   update() {
@@ -947,19 +939,23 @@ class Particle {
 function connect() {
   for (let a = 0; a < particles.length; a++) {
     for (let b = a; b < particles.length; b++) {
+
       let dx = particles[a].x - particles[b].x;
       let dy = particles[a].y - particles[b].y;
       let distance = dx * dx + dy * dy;
 
-      if (distance < 15000) {
-        ctx.strokeStyle = "rgba(0,255,200,0.35)";
-        ctx.shadowColor = "#00ffd0";
-        ctx.shadowBlur = 8;
+      if (distance < 10000) {  // tighter connection radius
+        ctx.strokeStyle = "rgba(0,245,212,0.12)";
         ctx.lineWidth = 1;
+        ctx.shadowColor = "#00f5d4";
+        ctx.shadowBlur = 4;
+
         ctx.beginPath();
         ctx.moveTo(particles[a].x, particles[a].y);
         ctx.lineTo(particles[b].x, particles[b].y);
         ctx.stroke();
+
+        ctx.shadowBlur = 0;
       }
     }
   }
@@ -992,6 +988,8 @@ window.addEventListener("resize", () => {
   canvas.height = window.innerHeight;
   init();
 });
+</script>
+
 </script> 
 </body>
 </html>
