@@ -917,15 +917,15 @@ window.addEventListener("resize", resizeCanvas);
 
 
 let particles = [];
-const particleCount = 180; // more particles = more intense
+const particleCount = 260; // more particles = more intense
 
 class Particle {
   constructor() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
     this.size = 2;
-    this.speedX = (Math.random() - 0.5) * 4; // faster
-    this.speedY = (Math.random() - 0.5) * 4;
+    this.speedX = (Math.random() - 0.5) * 6; // faster
+    this.speedY = (Math.random() - 0.5) * 6;
   }
 
   update() {
@@ -952,7 +952,9 @@ function connect() {
       let distance = dx * dx + dy * dy;
 
       if (distance < 15000) {
-        ctx.strokeStyle = "rgba(0,245,212,0.2)";
+        ctx.strokeStyle = "rgba(0,255,200,0.35)";
+        ctx.shadowColor = "#00ffd0";
+        ctx.shadowBlur = 8;
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.moveTo(particles[a].x, particles[a].y);
