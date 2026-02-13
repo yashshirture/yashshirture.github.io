@@ -19,29 +19,26 @@ html { scroll-behavior: smooth; }
 <body> <canvas id="ai-network"></canvas>
 
 
-/* ================= AI NETWORK BACKGROUND ================= */
+/* ================= AI BACKGROUND FIX ================= */
 
+body {
+  margin: 0;
+  padding: 0;
+  background: #050b14; /* Deep dark base */
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Canvas Background */
 #ai-network {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -5;
-  background: #050b14;
-}
-
-/* Slight glow overlay */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(0,255,200,0.08), transparent 60%);
+  z-index: -10;
   pointer-events: none;
-  z-index: -4;
 }
-
-
 
 /* ================= NAV ================= */
 
@@ -917,49 +914,46 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particles = [];
-const particleCount = 120;
+const particleCount = 140;
 
 class Particle {
   constructor() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
-    this.vx = (Math.random() - 0.5) * 1.5;
-    this.vy = (Math.random() - 0.5) * 1.5;
+    this.size = 2;
+    this.speedX = (Math.random() - 0.5) * 2.5;
+    this.speedY = (Math.random() - 0.5) * 2.5;
   }
 
-  move() {
-    this.x += this.vx;
-    this.y += this.vy;
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
 
-    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
   }
 
   draw() {
+    ctx.fillStyle = "#00f5d4";
     ctx.beginPath();
-    ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
-    ctx.fillStyle = "#00f0d0";
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.fill();
   }
 }
 
-for (let i = 0; i < particleCount; i++) {
-  particles.push(new Particle());
-}
-
 function connect() {
-  for (let i = 0; i < particles.length; i++) {
-    for (let j = i; j < particles.length; j++) {
-      let dx = particles[i].x - particles[j].x;
-      let dy = particles[i].y - particles[j].y;
+  for (let a = 0; a < particles.length; a++) {
+    for (let b = a; b < particles.length; b++) {
+      let dx = particles[a].x - particles[b].x;
+      let dy = particles[a].y - particles[b].y;
       let distance = dx * dx + dy * dy;
 
       if (distance < 12000) {
-        ctx.beginPath();
-        ctx.strokeStyle = "rgba(0,255,200,0.15)";
+        ctx.strokeStyle = "rgba(0,245,212,0.15)";
         ctx.lineWidth = 1;
-        ctx.moveTo(particles[i].x, particles[i].y);
-        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.beginPath();
+        ctx.moveTo(particles[a].x, particles[a].y);
+        ctx.lineTo(particles[b].x, particles[b].y);
         ctx.stroke();
       }
     }
@@ -969,20 +963,29 @@ function connect() {
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  particles.forEach(p => {
-    p.move();
-    p.draw();
-  });
+  for (let i = 0; i < particles.length; i++) {
+    particles[i].update();
+    particles[i].draw();
+  }
 
   connect();
   requestAnimationFrame(animate);
 }
 
+function init() {
+  particles = [];
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+  }
+}
+
+init();
 animate();
 
-window.addEventListener("resize", () => {
+window.addEventListener("resize", function () {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+  init();
 });
 </script>
 
