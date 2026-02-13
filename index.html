@@ -19,16 +19,63 @@
 html { scroll-behavior: smooth; }
 
 
-/* ================= AI NETWORK BACKGROUND ================= */
+/* ================= EXECUTIVE GRADIENT BACKGROUND ================= */
 
 html, body {
   margin: 0;
   padding: 0;
-  background: #050b14;
   overflow-x: hidden;
+  background: #07121c;
 }
 
-/* Make all sections transparent so canvas is visible */
+/* Smooth executive gradient layer */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    #07121c 0%,
+    #081826 40%,
+    #0a2230 70%,
+    #07121c 100%
+  );
+  z-index: -3;
+}
+
+/* Soft animated glow wash */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle at 70% 30%,
+    rgba(0, 255, 200, 0.08),
+    transparent 60%
+  );
+  animation: executiveShift 18s ease-in-out infinite alternate;
+  z-index: -2;
+}
+
+/* Slow luxury movement */
+@keyframes executiveShift {
+  0% {
+    background: radial-gradient(
+      circle at 70% 30%,
+      rgba(0, 255, 200, 0.08),
+      transparent 60%
+    );
+  }
+  100% {
+    background: radial-gradient(
+      circle at 30% 70%,
+      rgba(0, 255, 200, 0.08),
+      transparent 60%
+    );
+  }
+}
+
+/* Make sections transparent */
 section,
 header,
 main,
@@ -37,22 +84,6 @@ main,
 .capabilities-section,
 .section-glow {
   background: transparent !important;
-}
-
-/* Canvas full screen */
-#ai-network {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;      /* not negative */
-  pointer-events: none;
-}
-
-  body {
-  position: relative;
-  z-index: 1;
 }
 
 
@@ -212,11 +243,16 @@ nav a:hover {
   }
 
   .hero-image img {
-    margin: auto;
-  }
+  width: 300px;
+  border-radius: 50%;
+  border: 3px solid #00ffd0;
+  box-shadow: 
+    0 0 60px rgba(0,255,200,0.4),
+    0 0 120px rgba(0,255,200,0.15);
+  transition: 0.4s ease;
 }
 
-/* Buttons */
+  /* Buttons */
  .hero-name {
   font-size: 52px;
   font-weight: 700;
@@ -633,10 +669,8 @@ footer {
 </head>
 
 <body>
-
-<canvas id="ai-network"></canvas>
   
-<nav>
+  <nav>
   <div><strong style="color:#00F0FF;">Yash Shirture</strong></div>
   <div>
     <a href="#about">About</a>
