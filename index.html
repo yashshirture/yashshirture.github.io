@@ -17,30 +17,56 @@
 
 html { scroll-behavior: smooth; }
 
+  /* ================= GLOBAL BACKGROUND ================= */
+
 body {
-  font-family: "Segoe UI", sans-serif;
-  background: #060b14;
-  color: #e6edf3;
+  margin: 0;
+  padding: 0;
+  background: #06101f;
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
   overflow-x: hidden;
+  position: relative;
 }
 
-/* ================= ANIMATED GRID ================= */
-
+/* Animated Gradient Layer */
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(0,240,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,240,255,0.05) 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: gridMove 40s linear infinite;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, rgba(0,255,200,0.15), transparent 40%),
+              radial-gradient(circle at 70% 70%, rgba(0,150,255,0.15), transparent 40%),
+              radial-gradient(circle at 50% 80%, rgba(0,255,150,0.12), transparent 40%);
+  animation: moveBackground 18s linear infinite;
   z-index: -2;
 }
 
-@keyframes gridMove {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 60px 60px, 60px 60px; }
+/* Grid Overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(0,255,200,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,200,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: -1;
+}
+
+/* Smooth Background Animation */
+@keyframes moveBackground {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
 }
 
 /* ================= NAV ================= */
