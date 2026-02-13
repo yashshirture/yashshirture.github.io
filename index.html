@@ -488,63 +488,50 @@ footer {
 
 /* ================= CERTIFICATIONS ================= */
 
-.cert-section {
-  padding: 100px 10%;
+/* Section Glow */
+.section-glow {
+  padding: 80px 10%;
 }
 
-.cert-grid {
-  display: grid;
-  gap: 40px;
-}
-
-.cert-card {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  background: linear-gradient(145deg, #0b1c2e, #081422);
-  border: 1px solid rgba(0,255,200,0.15);
-  border-radius: 16px;
-  padding: 30px;
+/* Large Certificate Card */
+.cert-card-large {
+  background: linear-gradient(145deg, #0c1f2e, #0a1823);
+  border: 1px solid rgba(0, 255, 200, 0.2);
+  border-radius: 18px;
+  padding: 40px;
+  margin-bottom: 60px;
   transition: 0.4s ease;
+  box-shadow: 0 0 30px rgba(0, 255, 200, 0.05);
 }
 
-.cert-card:hover {
+.cert-card-large:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(0,255,200,0.25);
-  border-color: rgba(0,255,200,0.5);
+  box-shadow: 0 0 40px rgba(0, 255, 200, 0.25);
 }
 
-.cert-card img {
-  width: 180px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,255,200,0.2);
+/* Certificate Title */
+.cert-card-large h3 {
+  font-size: 22px;
+  margin-bottom: 25px;
+  color: #ffffff;
 }
 
-.cert-content h3 {
-  font-size: 18px;
-  margin-bottom: 8px;
-  color: #e6edf3;
+/* Certificate Image Large */
+.cert-card-large img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.15);
 }
 
+/* Date Styling */
 .cert-date {
-  color: #00ffd0;
+  font-size: 16px;
+  color: #00f5d4;
   font-weight: 500;
-  letter-spacing: 0.5px;
 }
-
-/* Responsive */
-@media(max-width: 768px){
-  .cert-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .cert-card img {
-    width: 100%;
-    max-width: 260px;
-  }
-}
-
 
 /* ================= CONTACT ================= */
 
@@ -840,35 +827,30 @@ footer {
 
 
     <!-- Certification 2 -->
-   <section id="certifications" class="cert-section">
-
+<section id="certifications" class="section-glow">
   <h2 class="section-title">Certifications</h2>
 
-  <div class="cert-grid">
+  <!-- Excel Certificate -->
+  <div class="cert-card-large">
+    <h3>Microsoft Excel — Excel from Beginner to Advanced (Udemy)</h3>
 
-    <!-- Excel Certificate -->
-    <div class="cert-card">
-      <img src="excel-cert.png" alt="Advanced Excel Certificate">
+    <img src="excel-cert.png" alt="Advanced Excel Certificate">
 
-      <div class="cert-content">
-        <h3>Microsoft Excel — Excel from Beginner to Advanced (Udemy)</h3>
-        <p class="cert-date">March 2025 — May 2025</p>
-      </div>
-    </div>
+    <p class="cert-date">March 2025 — May 2025</p>
+  </div>
 
-    <!-- Deloitte Certificate -->
-    <div class="cert-card">
-      <img src="deloitte-forage.jpg" alt="Deloitte Data Analytics Certificate">
+  <!-- Deloitte Certificate -->
+  <div class="cert-card-large">
+    <h3>Deloitte Australia — Data Analytics Job Simulation (Forage)</h3>
 
-      <div class="cert-content">
-        <h3>Deloitte Australia — Data Analytics Job Simulation (Forage)</h3>
-        <p class="cert-date">December 2025 — January 2026</p>
-      </div>
-    </div>
+    <img src="deloitte-cert.png" alt="Deloitte Certificate">
 
+    <p class="cert-date">December 2025 — January 2026</p>
   </div>
 
 </section>
+
+
 
 
   <section id="contact" class="contact-section">
