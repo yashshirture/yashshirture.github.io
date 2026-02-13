@@ -407,6 +407,61 @@ footer {
   margin-bottom: 70px;
 }
 
+  /* ================= CAPABILITIES ================= */
+
+.capabilities-section {
+  padding: 120px 8%;
+}
+
+.capabilities-intro {
+  max-width: 750px;
+  margin-bottom: 60px;
+  color: #94a3b8;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+}
+
+.capability-card {
+  background: rgba(10, 25, 47, 0.8);
+  padding: 35px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 255, 200, 0.15);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(8px);
+}
+
+.capability-card:hover {
+  transform: translateY(-6px);
+  border-color: #00ffd0;
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.2);
+}
+
+.capability-card h3 {
+  color: #00ffd0;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.capability-card p {
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.impact-tag {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 12px;
+  color: #38bdf8;
+  letter-spacing: 0.5px;
+}
+
 </style>
 </head>
 
@@ -564,6 +619,59 @@ footer {
   </div>
 
 </div>
+
+<!-- ================= CAPABILITIES ================= -->
+
+<section id="capabilities" class="capabilities-section">
+  <h2 class="section-title">Core Operational Capabilities</h2>
+
+  <p class="capabilities-intro">
+    Structured reporting ownership across data validation, KPI architecture, 
+    and executive decision-support systems. Focused on performance visibility, 
+    operational control, and scalable reporting frameworks.
+  </p>
+
+  <div class="capabilities-grid">
+
+    <div class="capability-card">
+      <h3>Reporting Architecture & KPI Engineering</h3>
+      <p>
+        Design of layered reporting systems including raw data validation, 
+        structured KPI logic, and executive dashboard summaries.
+      </p>
+      <span class="impact-tag">Business Value: Centralized performance visibility</span>
+    </div>
+
+    <div class="capability-card">
+      <h3>Sales & Operations Performance Monitoring</h3>
+      <p>
+        Development of revenue tracking models, demand trend diagnostics, 
+        and operational control dashboards aligned with management review cycles.
+      </p>
+      <span class="impact-tag">Business Value: Faster decision cycles</span>
+    </div>
+
+    <div class="capability-card">
+      <h3>Data Structuring & SQL Aggregation Logic</h3>
+      <p>
+        Clean dataset transformation, grouped metric aggregation, and 
+        structured query logic to convert raw operational data into usable intelligence.
+      </p>
+      <span class="impact-tag">Business Value: Reliable analytical foundation</span>
+    </div>
+
+    <div class="capability-card">
+      <h3>Business Intelligence & Dashboard Systems</h3>
+      <p>
+        Interactive reporting frameworks using Excel & Power BI with 
+        scalable models, controlled filters, and executive-ready presentation layers.
+      </p>
+      <span class="impact-tag">Business Value: Executive clarity & control</span>
+    </div>
+
+  </div>
+</section>
+
 
 
 </section>
