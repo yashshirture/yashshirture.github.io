@@ -409,48 +409,59 @@ footer {
 
 /* ================= CAPABILITIES ================= */
 
-/* CAPABILITY CARD - DARK DATA LAB GLOW */
+.capabilities-section {
+  padding: 100px 8%;
+}
 
+.section-title {
+  font-size: 36px;
+  color: #00f5d4;
+  margin-bottom: 60px;
+  text-shadow: 0 0 20px rgba(0,255,200,0.4);
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+/* CARD BASE */
 .skill-card {
   background: linear-gradient(145deg, #0c1f2e, #0a1823);
-  border: 1px solid rgba(0, 255, 200, 0.15);
-  border-radius: 18px;
+  border-radius: 20px;
   padding: 35px;
   transition: all 0.35s ease;
-  position: relative;
-  overflow: hidden;
-
-  /* Soft outer glow */
+  border: 1px solid rgba(0, 255, 200, 0.15);
   box-shadow: 
     0 0 25px rgba(0, 255, 200, 0.05),
-    inset 0 0 10px rgba(0, 255, 200, 0.03);
+    inset 0 0 10px rgba(0, 255, 200, 0.05);
 }
 
-/* Subtle animated glow pulse */
-.skill-card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, rgba(0,255,200,0.08), transparent 60%);
-  transform: rotate(0deg);
-  animation: glowRotate 8s linear infinite;
-  z-index: 0;
+/* TITLE */
+.skill-card h3 {
+  color: #00f5d4;
+  font-size: 20px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(0,255,200,0.4);
 }
 
-@keyframes glowRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+/* BODY */
+.skill-card p {
+  color: #cfefff;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
-.skill-card * {
-  position: relative;
-  z-index: 1;
+/* IMPACT */
+.skill-card .impact {
+  font-size: 14px;
+  color: #00e0ff;
+  font-weight: 500;
 }
 
-/* HOVER EFFECT */
+/* HOVER */
 .skill-card:hover {
   transform: translateY(-8px);
   border: 1px solid rgba(0, 255, 200, 0.5);
@@ -459,12 +470,6 @@ footer {
     0 0 80px rgba(0, 255, 200, 0.15);
 }
 
-
-  /* ===== Section Wrapper ===== */
-
-.section-block {
-  padding: 100px 10%;
-}
 
 /* ================= CERTIFICATIONS ================= */
 
@@ -728,79 +733,49 @@ footer {
 <!-- ================= CAPABILITIES ================= -->
 
 <section id="capabilities" class="capabilities-section">
+  <h2 class="section-title">Capabilities</h2>
 
-  <div class="container">
+  <div class="capabilities-grid">
 
-    <h2 class="section-heading">Capabilities</h2>
-    <p class="section-subheading">
-      Structured reporting architecture, operational visibility systems, and executive decision support frameworks.
-    </p>
+    <div class="skill-card">
+      <h3>Reporting Architecture & KPI Engineering</h3>
+      <p>Design of layered reporting systems including raw data validation, structured KPI logic, and executive dashboards aligned with performance control.</p>
+      <span class="impact">Impact: Centralized performance visibility</span>
+    </div>
 
-    <div class="capabilities-grid">
+    <div class="skill-card">
+      <h3>Sales & Operations Performance Monitoring</h3>
+      <p>Development of revenue tracking models, demand diagnostics, and operational control dashboards supporting management review cycles.</p>
+      <span class="impact">Impact: Faster decision cycles</span>
+    </div>
 
-      <!-- 1 -->
-      <div class="capability-card">
-        <h3>Reporting Architecture & KPI Engineering</h3>
-        <p>
-          Design of layered reporting systems including raw data validation, 
-          structured KPI logic, and executive dashboard summaries aligned with performance control.
-        </p>
-        <span class="business-impact">Impact: Centralized performance visibility</span>
-      </div>
+    <div class="skill-card">
+      <h3>Data Structuring & SQL Aggregation Logic</h3>
+      <p>Clean dataset transformation, grouped metric aggregation, and structured query logic converting raw operational data into usable intelligence.</p>
+      <span class="impact">Impact: Reliable analytical foundation</span>
+    </div>
 
-      <!-- 2 -->
-      <div class="capability-card">
-        <h3>Sales & Operations Performance Monitoring</h3>
-        <p>
-          Development of revenue tracking models, demand diagnostics, 
-          and operational control dashboards supporting management review cycles.
-        </p>
-        <span class="business-impact">Impact: Faster decision cycles</span>
-      </div>
+    <div class="skill-card">
+      <h3>Business Intelligence & Dashboard Systems</h3>
+      <p>Executive-ready reporting frameworks using Excel & Power BI with controlled filters, scalable models, and structured visual layers.</p>
+      <span class="impact">Impact: Executive clarity & control</span>
+    </div>
 
-      <!-- 3 -->
-      <div class="capability-card">
-        <h3>Data Structuring & SQL Aggregation Logic</h3>
-        <p>
-          Clean dataset transformation, grouped metric aggregation, 
-          and structured query logic converting raw operational data into usable intelligence.
-        </p>
-        <span class="business-impact">Impact: Reliable analytical foundation</span>
-      </div>
+    <div class="skill-card">
+      <h3>Data Governance & Validation Controls</h3>
+      <p>Implementation of structured validation logic, error-handling frameworks, and controlled reporting inputs to reduce data risk.</p>
+      <span class="impact">Impact: Reduced reporting errors</span>
+    </div>
 
-      <!-- 4 -->
-      <div class="capability-card">
-        <h3>Business Intelligence & Dashboard Systems</h3>
-        <p>
-          Executive-ready reporting frameworks using Excel & Power BI 
-          with controlled filters, scalable models, and structured visual layers.
-        </p>
-        <span class="business-impact">Impact: Executive clarity & control</span>
-      </div>
-
-      <!-- 5 -->
-      <div class="capability-card">
-        <h3>Data Governance & Validation Controls</h3>
-        <p>
-          Implementation of structured validation logic, 
-          error-handling frameworks, and controlled reporting inputs to reduce data risk.
-        </p>
-        <span class="business-impact">Impact: Reduced reporting errors</span>
-      </div>
-
-      <!-- 6 -->
-      <div class="capability-card">
-        <h3>Executive Reporting & Decision Enablement</h3>
-        <p>
-          Translation of operational metrics into concise executive summaries, 
-          structured performance reviews, and decision-ready reporting views.
-        </p>
-        <span class="business-impact">Impact: Strategic clarity for leadership</span>
-      </div>
-
+    <div class="skill-card">
+      <h3>Executive Reporting & Decision Enablement</h3>
+      <p>Translation of operational metrics into concise executive summaries, structured performance reviews, and decision-ready reporting views.</p>
+      <span class="impact">Impact: Strategic clarity for leadership</span>
     </div>
 
   </div>
+</section>
+
 
 </section>
 
