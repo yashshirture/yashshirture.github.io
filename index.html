@@ -558,6 +558,7 @@ footer {
   color: #00f5d4;
   font-weight: 500;
   letter-spacing: 0.5px;
+ } 
 
 /* ================= CONTACT SECTION ================= */
 
@@ -889,30 +890,6 @@ footer {
 
 </section>
 
-
-
-
-
-
-
-</section>
-
-
-</section>
-
-</section>
-
-</section>
-
-
-</section>
-
-
-
-</section>
-
-</section>
-
 <footer>
 © 2026 Yash Shirture | Dark Data Lab Portfolio
 </footer>
@@ -921,8 +898,14 @@ footer {
 const canvas = document.getElementById("ai-network");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
 
 let particles = [];
 const particleCount = 180; // more particles = more intense
