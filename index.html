@@ -554,94 +554,67 @@ footer {
   font-weight: 500;
   letter-spacing: 0.5px;
 
- /* ================= CONTACT SECTION ================= */
+/* ================= CONTACT SECTION (MATCH CAPABILITIES) ================= */
 
 .contact-section {
-  padding: 120px 10%;
+  padding: 100px 10%;
 }
 
-/* Glowing Executive Contact Card */
+/* Same card structure as capability-card */
 .contact-card {
-  background: linear-gradient(145deg, #0b1c2b, #081520);
-  border: 1px solid rgba(0,255,200,0.25);
-  border-radius: 20px;
-  padding: 60px;
-  max-width: 1000px;
+  background: linear-gradient(145deg, #0c1f2e, #0a1823);
+  border: 1px solid rgba(0, 255, 200, 0.2);
+  border-radius: 18px;
+  padding: 50px;
+  max-width: 950px;
   margin-top: 40px;
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
+  transition: 0.4s ease;
 
   box-shadow:
-    0 0 0 1px rgba(0,255,200,0.08),
-    0 0 45px rgba(0,255,200,0.08),
-    inset 0 0 35px rgba(0,255,200,0.03);
+    0 0 40px rgba(0,255,200,0.08);
 }
 
-/* Strong Glow on Hover */
+/* Same hover glow strength */
 .contact-card:hover {
   transform: translateY(-6px);
-  border: 1px solid rgba(0,255,200,0.5);
   box-shadow:
-    0 0 0 1px rgba(0,255,200,0.2),
-    0 0 90px rgba(0,255,200,0.25),
-    0 0 140px rgba(0,255,200,0.08),
-    inset 0 0 45px rgba(0,255,200,0.05);
+    0 0 60px rgba(0,255,200,0.18);
 }
 
-/* Heading */
+/* Title */
 .contact-card h3 {
-  font-size: 24px;
-  color: #ffffff;
+  font-size: 22px;
   margin-bottom: 20px;
-  font-weight: 600;
+  color: #ffffff;
 }
 
 /* Description */
 .contact-card p {
-  font-size: 16px;
-  color: #b9c6da;
-  line-height: 1.8;
-  margin-bottom: 30px;
-  max-width: 800px;
-}
-
-/* Contact Links Container */
-.contact-links {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  font-size: 15px;
+  color: #cdd6e4;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  max-width: 750px;
 }
 
 /* Links */
+.contact-links {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
 .contact-links a {
-  color: #00f5d4;
+  color: #00f0d0;
   font-weight: 500;
   text-decoration: none;
-  position: relative;
   transition: 0.3s ease;
-}
-
-/* Subtle Underline Animation */
-.contact-links a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background: #00f5d4;
-  transition: 0.3s ease;
-}
-
-.contact-links a:hover::after {
-  width: 100%;
 }
 
 .contact-links a:hover {
   color: #ffffff;
 }
+
 
 
 </style>
@@ -900,7 +873,6 @@ footer {
     </div>
   </div>
 </section>
-
 
 
 
