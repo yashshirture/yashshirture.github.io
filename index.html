@@ -407,45 +407,52 @@ footer {
   margin-bottom: 70px;
 }
 
-  /* ================= CAPABILITIES ================= */
+/* ================= CAPABILITIES ================= */
 
 .capabilities-section {
-  padding: 120px 8%;
+  padding: 120px 10%;
 }
 
-.capabilities-intro {
-  max-width: 750px;
-  margin-bottom: 60px;
+.section-heading {
+  font-size: 32px;
+  color: #00f5d4;
+  margin-bottom: 15px;
+}
+
+.section-subheading {
   color: #94a3b8;
-  line-height: 1.7;
-  font-size: 15px;
+  max-width: 600px;
+  margin-bottom: 60px;
+  line-height: 1.6;
 }
 
 .capabilities-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 35px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
 .capability-card {
-  background: rgba(10, 25, 47, 0.8);
-  padding: 35px;
-  border-radius: 16px;
-  border: 1px solid rgba(0, 255, 200, 0.15);
-  transition: all 0.4s ease;
-  backdrop-filter: blur(8px);
+  background: #0f1b2d;
+  padding: 30px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,255,212,0.08);
+  transition: 0.3s ease;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .capability-card:hover {
-  transform: translateY(-6px);
-  border-color: #00ffd0;
-  box-shadow: 0 0 25px rgba(0, 255, 200, 0.2);
+  border-color: rgba(0,255,212,0.25);
+  transform: translateY(-4px);
 }
 
 .capability-card h3 {
-  color: #00ffd0;
-  margin-bottom: 15px;
+  color: #00f5d4;
   font-size: 18px;
+  margin-bottom: 15px;
 }
 
 .capability-card p {
@@ -454,56 +461,24 @@ footer {
   line-height: 1.6;
 }
 
-.impact-tag {
-  display: inline-block;
-  margin-top: 18px;
-  font-size: 12px;
+.business-impact {
+  margin-top: 20px;
+  font-size: 13px;
   color: #38bdf8;
-  letter-spacing: 0.5px;
+  font-weight: 500;
 }
 
-  .contact-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  margin-top: 50px;
-  align-items: center;
+@media (max-width: 1000px) {
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.contact-left h3 {
-  margin-bottom: 15px;
-  color: #00ffd0;
+@media (max-width: 600px) {
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
 }
-
-.contact-left p {
-  color: #94a3b8;
-  line-height: 1.7;
-}
-
-.contact-item {
-  margin-bottom: 25px;
-}
-
-.contact-item span {
-  display: block;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #38bdf8;
-  margin-bottom: 6px;
-}
-
-.contact-item a {
-  font-size: 16px;
-  color: #e6edf3;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.contact-item a:hover {
-  color: #00ffd0;
-}
-
 
 
 </style>
@@ -667,97 +642,82 @@ footer {
 <!-- ================= CAPABILITIES ================= -->
 
 <section id="capabilities" class="capabilities-section">
-  <h2 class="section-title">Core Operational Capabilities</h2>
 
-  <p class="capabilities-intro">
-    Structured reporting ownership across data validation, KPI architecture, 
-    and executive decision-support systems. Focused on performance visibility, 
-    operational control, and scalable reporting frameworks.
-  </p>
+  <div class="container">
 
-  <div class="capabilities-grid">
+    <h2 class="section-heading">Core Capabilities</h2>
+    <p class="section-subheading">
+      Structured reporting architecture, operational visibility systems, and executive decision support frameworks.
+    </p>
 
-    <div class="capability-card">
-      <h3>Reporting Architecture & KPI Engineering</h3>
-      <p>
-        Design of layered reporting systems including raw data validation, 
-        structured KPI logic, and executive dashboard summaries.
-      </p>
-      <span class="impact-tag">Business Value: Centralized performance visibility</span>
-    </div>
+    <div class="capabilities-grid">
 
-    <div class="capability-card">
-      <h3>Sales & Operations Performance Monitoring</h3>
-      <p>
-        Development of revenue tracking models, demand trend diagnostics, 
-        and operational control dashboards aligned with management review cycles.
-      </p>
-      <span class="impact-tag">Business Value: Faster decision cycles</span>
-    </div>
+      <!-- 1 -->
+      <div class="capability-card">
+        <h3>Reporting Architecture & KPI Engineering</h3>
+        <p>
+          Design of layered reporting systems including raw data validation, 
+          structured KPI logic, and executive dashboard summaries aligned with performance control.
+        </p>
+        <span class="business-impact">Impact: Centralized performance visibility</span>
+      </div>
 
-    <div class="capability-card">
-      <h3>Data Structuring & SQL Aggregation Logic</h3>
-      <p>
-        Clean dataset transformation, grouped metric aggregation, and 
-        structured query logic to convert raw operational data into usable intelligence.
-      </p>
-      <span class="impact-tag">Business Value: Reliable analytical foundation</span>
-    </div>
+      <!-- 2 -->
+      <div class="capability-card">
+        <h3>Sales & Operations Performance Monitoring</h3>
+        <p>
+          Development of revenue tracking models, demand diagnostics, 
+          and operational control dashboards supporting management review cycles.
+        </p>
+        <span class="business-impact">Impact: Faster decision cycles</span>
+      </div>
 
-    <div class="capability-card">
-      <h3>Business Intelligence & Dashboard Systems</h3>
-      <p>
-        Interactive reporting frameworks using Excel & Power BI with 
-        scalable models, controlled filters, and executive-ready presentation layers.
-      </p>
-      <span class="impact-tag">Business Value: Executive clarity & control</span>
+      <!-- 3 -->
+      <div class="capability-card">
+        <h3>Data Structuring & SQL Aggregation Logic</h3>
+        <p>
+          Clean dataset transformation, grouped metric aggregation, 
+          and structured query logic converting raw operational data into usable intelligence.
+        </p>
+        <span class="business-impact">Impact: Reliable analytical foundation</span>
+      </div>
+
+      <!-- 4 -->
+      <div class="capability-card">
+        <h3>Business Intelligence & Dashboard Systems</h3>
+        <p>
+          Executive-ready reporting frameworks using Excel & Power BI 
+          with controlled filters, scalable models, and structured visual layers.
+        </p>
+        <span class="business-impact">Impact: Executive clarity & control</span>
+      </div>
+
+      <!-- 5 -->
+      <div class="capability-card">
+        <h3>Data Governance & Validation Controls</h3>
+        <p>
+          Implementation of structured validation logic, 
+          error-handling frameworks, and controlled reporting inputs to reduce data risk.
+        </p>
+        <span class="business-impact">Impact: Reduced reporting errors</span>
+      </div>
+
+      <!-- 6 -->
+      <div class="capability-card">
+        <h3>Executive Reporting & Decision Enablement</h3>
+        <p>
+          Translation of operational metrics into concise executive summaries, 
+          structured performance reviews, and decision-ready reporting views.
+        </p>
+        <span class="business-impact">Impact: Strategic clarity for leadership</span>
+      </div>
+
     </div>
 
   </div>
 
-  <div class="capability-card">
-  <h3>Data Governance & Validation Controls</h3>
-  <p>
-    Implementation of structured validation logic, error handling frameworks,
-    and controlled reporting inputs to ensure analytical reliability and
-    minimize data integrity risks.
-  </p>
-  <span class="impact-tag">Business Value: Reduced reporting errors & risk exposure</span>
-</div>
+</section>
 
-<div class="capability-card">
-  <h3>Executive Reporting & Decision Enablement</h3>
-  <p>
-    Translation of operational metrics into concise executive summaries,
-    performance review frameworks, and decision-ready reporting views
-    aligned with leadership priorities.
-  </p>
-  <span class="impact-tag">Business Value: Strategic clarity for leadership teams</span>
-</div>
-
-  <section id="certifications" class="section">
-
-  <h2 class="section-title">Certifications & Professional Development</h2>
-
-  <div class="certifications-wrapper">
-
-    <!-- Certification 1 -->
-    <div class="cert-card">
-      <div class="cert-left">
-        <img src="excel-cert.png" alt="Microsoft Excel Certification">
-      </div>
-
-      <div class="cert-right">
-        <h3>Microsoft Excel — Advanced Dashboard & Data Modeling</h3>
-        <p class="cert-timeline">April 2025 — May 2025</p>
-
-        <ul class="cert-points">
-          <li>Advanced formula logic and pivot-based KPI modeling</li>
-          <li>Structured dashboard architecture for executive reporting</li>
-          <li>Data validation frameworks and controlled reporting layers</li>
-        </ul>
-      </div>
-    </div>
 
 
     <!-- Certification 2 -->
